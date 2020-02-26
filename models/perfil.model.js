@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const perfil = new Schema({
-    usuario: {type: Object, required: true},
+    usuarioId: {type: String, required: true},
     descricao: {type: String, required: true, max: 250},
 })
 

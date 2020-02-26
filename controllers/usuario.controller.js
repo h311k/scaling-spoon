@@ -21,7 +21,7 @@ exports.auth = (req,res) => {
         'senha': security.encripta(req.body.senha),
     },'nome email dataCriacao',
     (err, usuario) => {
-        err? next(err) : usuario==null? res.status(500).send('Nome de usuário ou senha inválidos.') : res.send({auth: true, token: jwt.sign({usuario}, chaveJWT, {expiresIn: 300})})
+        err ? next(err) : usuario==null? res.status(500).send('Nome de usuário ou senha inválidos.') : res.send({auth: true, token: jwt.sign({usuario}, chaveJWT, {expiresIn: 300})})
     })
 }
 

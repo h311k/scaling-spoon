@@ -2,7 +2,7 @@ const Perfil = require('../models/perfil.model')
 
 exports.create = (req,res, next) => {
     let perfil = new Perfil({
-        usuario: req.body.usuario,
+        usuarioId: req.body.usuario._id,
         descricao: req.body.descricao,
     })
     perfil.save((err) => {
